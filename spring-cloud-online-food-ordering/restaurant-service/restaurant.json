@@ -1,0 +1,20 @@
+[
+  {
+    "restaurantId": "7c08973d-bed4-4cbd-9c28-9282a02a6032",
+    ""
+    "longitude": "-77.0036435",
+    "runningDistance": "39492",
+    "totalRunningTime": "2139.25",
+    "heartRate": 0,
+    "timestamp": "2017-04-01T18:50:35Z",
+  },
+  {
+    "runningId": "15dfe2b9-e097-4899-bcb2-e0e8e72416ad",
+    "latitude": "40.2230391039276",
+    "longitude": "-76.0626631118454",
+    "runningDistance": "0.1",
+    "totalRunningTime": "0.1",
+    "heartRate": 0,
+    "timestamp": "2017-04-01T18:50:35Z",
+  }
+]

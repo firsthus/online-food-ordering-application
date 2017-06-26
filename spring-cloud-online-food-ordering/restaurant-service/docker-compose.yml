@@ -1,0 +1,13 @@
+mysql:
+  image: mysql:5.7
+  hostname: jiaxi-mysql
+  volumes:
+    - ./mysql_db:/var/mysql_db
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: myDB
+    MYSQL_USERNAME: guest
+    MYSQL_PASSWORD: guest
+  ports:
+   - "3306:3306"
