@@ -3,6 +3,10 @@
 *.iws
 *.iml
 *.ipr
-log/
-target/
+*.jar
+*.log
+*/log/
+*/target/
+*/*/target/
+*/*/log/
 !.mvn/wrapper/maven-wrapper.jar
