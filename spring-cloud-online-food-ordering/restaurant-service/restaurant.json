@@ -1,20 +1,32 @@
 [
   {
     "restaurantId": "7c08973d-bed4-4cbd-9c28-9282a02a6032",
-    ""
-    "longitude": "-77.0036435",
-    "runningDistance": "39492",
-    "totalRunningTime": "2139.25",
-    "heartRate": 0,
-    "timestamp": "2017-04-01T18:50:35Z",
+    "name": "store1",
+    "address": "1 main street",
+    "phone":"111-111-1111"
   },
   {
     "runningId": "15dfe2b9-e097-4899-bcb2-e0e8e72416ad",
-    "latitude": "40.2230391039276",
-    "longitude": "-76.0626631118454",
-    "runningDistance": "0.1",
-    "totalRunningTime": "0.1",
-    "heartRate": 0,
-    "timestamp": "2017-04-01T18:50:35Z",
+    "name": "store2",
+    "address": "2 main street",
+    "phone":"222-222-2222"
+  }
+  {
+    "runningId": "2f3c321b-d239-43d6-8fe0-c035ecdff232",
+    "name": "store3",
+    "address": "3 main street",
+    "phone":"333-333-3333"
+  }
+  {
+    "runningId": "28810a26-25e6-4680-8baf-59bb07c4aee0",
+    "name": "store4",
+    "address": "4 main street",
+    "phone":"444-444-4444"
+  }
+  {
+    "runningId": "fb0b4725-ac25-4812-b425-d43a18c958bb",
+    "name": "store5",
+    "address": "5 main street",
+    "phone":"555-555-5555"
   }
 ]

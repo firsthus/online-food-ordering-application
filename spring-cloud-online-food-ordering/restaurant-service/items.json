@@ -1,0 +1,37 @@
+[
+  {
+    "foodId": "17981",
+    "name": "food1",
+    "price": 1.0,
+    "description": "This is food1",
+    "restaurantId": "15dfe2b9-e097-4899-bcb2-e0e8e72416ad"
+  },
+  {
+    "foodId": "42231",
+    "name": "food2",
+    "price": 2.0,
+    "description": "This is food2",
+    "restaurantId": "15dfe2b9-e097-4899-bcb2-e0e8e72416ad"
+  },
+  {
+    "foodId": "52348",
+    "name": "food3",
+    "price": 3.0,
+    "description": "This is food3",
+    "restaurantId": "2f3c321b-d239-43d6-8fe0-c035ecdff232"
+  },
+  {
+    "foodId": "02172",
+    "name": "food4",
+    "price": 4.0,
+    "description": "This is food4",
+    "restaurantId": "2f3c321b-d239-43d6-8fe0-c035ecdff232"
+  },
+  {
+    "foodId": "65269",
+    "name": "food5",
+    "price": 5.0,
+    "description": "This is food5",
+    "restaurantId": "2f3c321b-d239-43d6-8fe0-c035ecdff232"
+  }
+]
