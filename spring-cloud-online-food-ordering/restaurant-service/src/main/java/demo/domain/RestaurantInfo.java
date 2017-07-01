@@ -45,6 +45,21 @@ public class RestaurantInfo {
         this.Id = Id;
     }
 
+    public RestaurantInfo(String restaurantName, String address, String phoneNumber) {
+        this.restaurantName = restaurantName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.restaurantId = String.valueOf((restaurantName+address+phoneNumber).hashCode());
+    }
+
+    public RestaurantInfo(String restaurantName, String address, String phoneNumber, String restaurantId) {
+        this.restaurantName = restaurantName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.restaurantId = restaurantId;
+    }
+
+
     //@JsonCreator
     public RestaurantInfo(List<ItemInfo> menu) {
         this.menu = menu;

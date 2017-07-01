@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> findByRestaurantId(String restaurantId);
+    List<Item> findByOrderInfo(OrderInfo orderInfo);
 }

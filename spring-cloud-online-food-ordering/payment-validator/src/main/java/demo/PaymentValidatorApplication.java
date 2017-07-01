@@ -8,8 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-public class RestaurantServiceApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(RestaurantServiceApplication.class, args);
+public class PaymentValidatorApplication {
+    public static void main(String[] args){
+        SpringApplication.run(PaymentValidatorApplication.class, args);
     }
 }

@@ -1,3 +1,4 @@
+
 package demo;
 
 import org.springframework.boot.SpringApplication;
@@ -8,8 +9,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-public class RestaurantServiceApplication {
+public class PaymentDistributorApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RestaurantServiceApplication.class, args);
+        SpringApplication.run(PaymentDistributorApplication.class, args);
     }
 }
+

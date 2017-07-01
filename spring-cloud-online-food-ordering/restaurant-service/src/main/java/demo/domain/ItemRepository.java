@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ItemRepository extends JpaRepository<ItemInfo, Long> {
     List<ItemInfo> findByRestaurantId(String restaurantId);
+    ItemInfo findFirstByName(String name);
 }

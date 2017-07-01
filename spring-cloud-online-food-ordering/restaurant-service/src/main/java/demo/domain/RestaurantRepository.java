@@ -8,6 +8,7 @@ import java.util.List;
 public interface RestaurantRepository extends JpaRepository<RestaurantInfo, Long> {
 
     RestaurantInfo findFirstByRestaurantId(@Param("restaurantID") String restaurantId);
-    List<RestaurantInfo> findByRestaurantName(@Param("retaurantName") String restaurantName);
+    RestaurantInfo findFirstByRestaurantName(@Param("restaurantName") String restaurantName);
+    List<RestaurantInfo> findByRestaurantName(@Param("restaurantName") String restaurantName);
     void deleteAll();
 }

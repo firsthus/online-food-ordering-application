@@ -1,10 +1,12 @@
 package demo.rest;
 
 import demo.domain.ItemInfo;
+import demo.domain.RestaurantInfo;
 import demo.service.ItemService;
 import demo.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,8 +27,8 @@ public class ItemInfoRestController {
 
     @RequestMapping(value = "/restaurant/menu", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public List<ItemInfo> uploadMenuByRestaurantId(@RequestBody List<ItemInfo> itemList) {
-        return this.itemService.saveMenu(itemList);
+    public List<ItemInfo> uploadMenu(@RequestBody List<ItemInfo> itemInfos) {
+        return this.itemService.saveMenu(itemInfos);
     }
 
 
@@ -40,6 +42,7 @@ public class ItemInfoRestController {
     public void purge() {
         this.itemService.deleteall();
     }
+
 
 
 

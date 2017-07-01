@@ -8,5 +8,6 @@ public interface RestaurantService {
     List<RestaurantInfo > saveRestaurantInfos(List<RestaurantInfo> restaurantInfos);
     void deleteAllRestaurants();
     List<RestaurantInfo> findByRestaurantName(String name);
+    RestaurantInfo findFirstByRestaurantName(String name);
     RestaurantInfo findByRestaurantId(String restaurantId);
 }

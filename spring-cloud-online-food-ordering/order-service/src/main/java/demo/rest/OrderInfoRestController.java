@@ -1,8 +1,10 @@
 package demo.rest;
 
 import demo.domain.OrderInfo;
+import demo.domain.OrderInfoDto;
 import demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,13 +33,28 @@ public class OrderInfoRestController {
         return orderService.saveOrders(orderInfos);
     }
 
+    @RequestMapping(value = "/restaurant/order", method = RequestMethod.GET)
+    public String orderGreetings() {
+        return "Welcome to order root page!";
+    }
 
     @RequestMapping(value = "/restaurant/{restaurantId}/order", method = RequestMethod.GET)
     public List<OrderInfo> viewOrders(@PathVariable String restaurantId) {
         return orderService.viewOrders(restaurantId);
     }
 
+    @RequestMapping(value = "/restaurant/order/{orderId}", method = RequestMethod.GET)
+    public OrderInfoDto viewOrderConfirmation(@PathVariable String orderId) {
+        // first check current order status
+        OrderInfoDto orderInfoDto = orderService.viewOrderConfirmation(orderId);
+        return orderInfoDto;
+    }
 
+    @RequestMapping(value = "/restaurant/order/{orderId}", method = RequestMethod.PUT)
+    //@ResponseStatus(HttpStatus.CREATED)
+    public void updateOrderStatus(@PathVariable String orderId, @ModelAttribute OrderInfo.OrderStatus orderStatus){
+        orderService.updateOrderStatus(orderId, orderStatus);
+    }
 
 
     @RequestMapping(value = "/restaurant/order/{orderId}", method = RequestMethod.DELETE)
