@@ -39,5 +39,10 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantRepository.findFirstByRestaurantId(restaurantId);
     }
 
+    @Override
+    public RestaurantInfo findFirstByRestaurantName(String restaurantName) {
+        return restaurantRepository.findFirstByRestaurantName(restaurantName);
+    }
+
 
 }
