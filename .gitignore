@@ -1,12 +1,8 @@
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-*.jar
-*.log
-*/log/
-*/target/
-*/*/target/
-*/*/log/
+**.idea
+**.iws
+**.iml
+**.ipr
+**/log/
+**/target/
 !.mvn/wrapper/maven-wrapper.jar

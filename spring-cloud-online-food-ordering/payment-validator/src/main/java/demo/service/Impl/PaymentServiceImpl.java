@@ -30,7 +30,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public boolean processPaymentInfo(PaymentInfo paymentInfo) {
 
-        String prefix = "http://localhost:9002/restaurant/order/";
+        String prefix = "http://order-service/restaurant/order/";
         String uri = prefix + paymentInfo.getOrderId();
         boolean isValid = validateInfo(paymentInfo);
         if (isValid) {
