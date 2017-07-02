@@ -9,7 +9,6 @@
         <version>1.0.0.BUILD-SNAPSHOT</version>
     </parent>
     <artifactId>order-service</artifactId>
-    <version>1.0.0.BUILD-SNAPSHOT</version>
     <name>order service</name>
     <packaging>jar</packaging>
 
