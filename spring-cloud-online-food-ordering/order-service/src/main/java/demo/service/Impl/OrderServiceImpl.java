@@ -3,6 +3,7 @@ package demo.service.Impl;
 
 import demo.domain.*;
 import demo.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     private OrderRepository orderRepository;
@@ -37,6 +39,10 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.save(orderInfos);
     }
 
+    @Override
+    public void purge(){
+        orderRepository.deleteAll();
+    }
 
     @Override
     public List<OrderInfo> viewOrders(String restaurantId){
@@ -55,11 +61,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderInfoDto viewOrderConfirmation(String orderId) {
+
         OrderInfo orderInfo = orderRepository.findFirstByOrderId(orderId);
         OrderInfoDto orderInfoDto = new OrderInfoDto(orderInfo);
         if(orderInfoDto.getOrderStatus().equals(OrderInfo.OrderStatus.paid)){
             orderInfoDto.setDeliveryTime(new Random().nextInt(55)+5);
         }
+        log.info("using orderInfoDto to view order for Id:" + orderId + " deliverytime:" + orderInfoDto.getDeliveryTime());
         List<Item> itemList = itemRepository.findByOrderInfo(orderInfo);
         orderInfoDto.setItemList(itemList);
         double totPrice = 0.0;
@@ -72,6 +80,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void updateOrderStatus(String orderId, OrderInfo.OrderStatus orderStatus){
+	System.out.println("order service handling update OrderStatus to" + orderStatus + "of orderId: " + orderId);
         OrderInfo orderInfo = findFirstByOrderId(orderId);
         orderInfo.setOrderStatus(orderStatus);
         orderRepository.save(orderInfo);

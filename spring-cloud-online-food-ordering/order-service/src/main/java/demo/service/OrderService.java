@@ -11,7 +11,7 @@ public interface OrderService {
     List<OrderInfo> viewOrders(String resterauntId);
     OrderInfo findFirstByOrderId(String orderId);
     void deleteOrder(String orderId);
-
+    void purge();
 
     OrderInfoDto viewOrderConfirmation(String orderId);
 

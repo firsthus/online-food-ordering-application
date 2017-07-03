@@ -59,16 +59,6 @@
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.micromata.jak</groupId>
-            <artifactId>JavaAPIforKml</artifactId>
-            <version>2.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.maps</groupId>
-            <artifactId>google-maps-services</artifactId>
-            <version>0.1.7</version>
-        </dependency>
-        <dependency>
             <groupId>com.spatial4j</groupId>
             <artifactId>spatial4j</artifactId>
             <version>0.4.1</version>

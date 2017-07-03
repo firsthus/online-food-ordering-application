@@ -27,6 +27,12 @@ public class OrderInfoRestController {
         return orderService.saveOrdersByRestaurantId(restaurantId, orderInfos);
     }
 
+    @RequestMapping(value = "/restaurant/order", method = RequestMethod.DELETE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void purge() {
+        orderService.purge();
+    }
+
     @RequestMapping(value = "/restaurant/order", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public List<OrderInfo> saveOrders(@RequestBody List<OrderInfo> orderInfos) {
@@ -51,9 +57,14 @@ public class OrderInfoRestController {
     }
 
     @RequestMapping(value = "/restaurant/order/{orderId}", method = RequestMethod.PUT)
-    //@ResponseStatus(HttpStatus.CREATED)
-    public void updateOrderStatus(@PathVariable String orderId, @ModelAttribute OrderInfo.OrderStatus orderStatus){
+    public void updateOrderStatus(@PathVariable String orderId,@RequestBody OrderInfo orderInfo){
+        OrderInfo.OrderStatus orderStatus = orderInfo.getOrderStatus();
+        OrderInfo orderInfo1 = orderService.findFirstByOrderId(orderId);
+        //System.out.println("order service handling put request on path:/restaurant/order/" + orderId +
+        //        ", original status is:" + orderInfo1.getOrderStatus() +
+         //       ", target orderstatus is"+ orderStatus);
         orderService.updateOrderStatus(orderId, orderStatus);
+        System.out.println("new OrderInfo status is:" + orderInfo1.getOrderStatus());
     }
 
 

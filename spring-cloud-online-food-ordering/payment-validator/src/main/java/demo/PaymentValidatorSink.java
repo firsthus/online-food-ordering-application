@@ -22,16 +22,16 @@ public class PaymentValidatorSink {
     @Autowired
     private PaymentService paymentService;
 
-    @HystrixCommand(fallbackMethod = "updatePaymentInfoFallback")
+    //@HystrixCommand(fallbackMethod = "updatePaymentInfoFallback")
     @ServiceActivator(inputChannel = Sink.INPUT)
     public void updatePaymentInfos(String input) throws Exception {
-        log.info("Payment info in validator: " + input);
         PaymentInfo payload = this.objectMapper.readValue(input, PaymentInfo.class);
+	    //log.info("Payload received: " + payload);
         boolean isValid = paymentService.processPaymentInfo(payload);
         log.info("Payment info processed, valid payment is" + isValid);
     }
 
     public void updatePaymentInfoFallback(String input){
-        log.info("Unable to validate paymentinfo, this is the fallback method\n" + "input is" + input );
+        log.info("Unable to receive or validate paymentinfo, this is the fallback method\n" + "input is" + input );
     }
 }
