@@ -34,17 +34,16 @@ public class PaymentServiceImpl implements PaymentService {
         String path = "/restaurant/order/{orderId}";
         String uri = service + path;
         boolean isValid = validateInfo(paymentInfo);
-        if (isValid) {
+        
+        if(isValid){
             log.info("Payment validated, calling order-service API to show confirmed info");
-
             OrderInfo orderInfo = new OrderInfo();
             orderInfo.setOrderStatus(OrderStatus.paid);
 
             HttpEntity<OrderInfo> entity = new HttpEntity<>(orderInfo);
-            //log.info("sending HTTP.PUT to uri:" + uri + " id is: " + paymentInfo.getOrderId());
-            //log.info("orderinfo is: " + orderInfo + " entity is: " + entity);
-
             this.restTemplate.put(uri, entity, paymentInfo.getOrderId());
+        else {
+            log.info("Payment is unvalid, order status remain to be processing")
         }
         return isValid;
     }
